@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/partido"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingEnd="15dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingStart="10dp"
+    tools:context=".PantallaPrincipal">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo_fess"
+        app:srcCompat="@mipmap/logo_redondo" />
+
+
+    <TextView
+        android:id="@+id/tv_titulo_instructivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iv_logo"
+        android:text="@string/hola"
+        android:textAppearance="@style/Titulos" />
+
+    <TextView
+        android:id="@+id/tv_desc_instructivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_titulo_instructivo"
+        android:text="@string/intro_instructivo"
+        android:textAppearance="@style/SubTitulos" />
+
+    <TextView
+        android:id="@+id/tv_proxima_entrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_desc_instructivo"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@style/SubTitulos" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/sc_no_mostrar"
+        style="@style/Switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/no_volver_a_mostrar_esta_pantalla" />
+
+
+</RelativeLayout>

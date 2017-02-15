@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_740c345eb73726722df2a14f0a180ac741c7cb61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_42da70a26656fafe6369383c132786d21a59e1aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_b06e828d0c9b2e1d06ea66412cd94a44c4f17921.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_58656fdf5867820727fde36ca4bd9a5ceb265146.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.1_0e9ef6d9b635c172e89a988aa01a5f87691172ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_cda0052eea16c78220fa1891b4166f9673648794.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_6b480fd5387866c7e557e9cfd6b63299b3ead6bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_29db8bc343b0a889c578a0c715d72e6b3a99d2d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_a0a50b37af467ae875509f95068034b0a08a9295.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.1.1_c1ee6d049fe5ff3a9382901716577d9eb4e7b1e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_f6e2b9dbe1e59ecd01399b77389877a396916430.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0558e5b6c171bd6719581340f9ac6be4af5ae265">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-25.1.1_58a84eda02af6aec94be8c89b46d55271e7dad1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.9\386a4339ffe52d5d63e80f9bed8d2b1d1a418249\android-async-http-1.4.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_a8033e7cff039ef4f5230592e57b495a749b8dd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fbaffbfc2a42fce3718dc9f52182810ad332b0ec">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.3.0_13ef8b327970b9fe4f9ea8f9f6a8fc40aa700a8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\gson-2.4_affd6dc8870b824c1c146cd4508f724c3b05745e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_c7a93face2b0c163e4a63dc354afda6a2a05a3bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_c77d47e337f0aa2767c1c0e9bd85dfb3a3e4ca5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\.gradle\caches\modules-2\files-2.1\cz.msebera.android\httpclient\4.3.6\526a9f794eab830eae4f23a62c572878b3f491ab\httpclient-4.3.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6_91fee10528819315fee77743139ea335cf5d591c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_0ae299d76bb1fc92e5e92b95e0c4380e0c9754d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b7c43c8ddfc4ae2091a33f2882927bb4e3e2fee2">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.github.chenupt.android-springindicator-1.0.2_20ca86f66cac96e38933acaa298e44cccb4129c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\glide-3.7.0_8af4e7f9febcf4a85e624fc5559201aa7fc45d32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.3.0_fa1e530920a0bcd0d0c7d4306d1d573648034221.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\exploded-aar\com.h6ah4i.android.widget.advrecyclerview\advrecyclerview\0.10.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="93acec620c48e810a4ef23f44e90f3eefde4cda2">
+        <dex dex="C:\Users\jlionti\Documents\Proyectos\Android\Fess\app\build\intermediates\pre-dexed\debug\com.h6ah4i.android.widget.advrecyclerview-advrecyclerview-0.10.3_a2219875dc0236f2b96315dec20ce4dbee716d3e.jar" />
+    </item>
+
+</items>

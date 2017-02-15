@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/partido"
+    app:cardCornerRadius="@dimen/radio_productos"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_producto"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/imagen_producto"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/logo_redondo"
+            app:riv_corner_radius="@dimen/radio_productos" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_nombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:textAppearance="@style/TituloProductos"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_precio"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:gravity="end"
+                    android:textAppearance="@style/TituloProductos"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_marca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:textAppearance="@style/TituloProductos"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_presentacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:textAppearance="@style/TituloProductos"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_pedidos"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:textAppearance="@style/TituloProductos"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/btn_cancelar"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0.3"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/ic_cancelar" />
+
+                <ImageButton
+                    android:id="@+id/btn_pedir"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0.3"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/ic_pedir" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

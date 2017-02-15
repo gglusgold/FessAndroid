@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Fess</string>
+    <string name="logo_fess">Logo FESS</string>
+    <string name="hola">Hola!</string>
+    <string name="intro_instructivo">Para saber qué productos mostrarte, tenemos que saber dónde vas a retirar tu pedido</string>
+    <string name="no_volver_a_mostrar_esta_pantalla">No volver a mostrar esta pantalla</string>
+    <string name="error_comunicacion">Error buscando la información</string>
+    <string name="sub_titulo">Frente de Economia Social y Solidaria</string>
+    <string name="titulo">Nuevo Encuentro</string>
+    <string name="imagen_producto">Imagen Producto</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="campo_obligatorio">Campo obligatorio</string>
+    <string name="error_inicio">Error iniciando sesion, intente mas tarde</string>
+    <string name="confirmacion">¿Deseas confirmar la compra? Después podes modificarla o cancelarla</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="error_pidiendo">Su pedido no fue realizado, intente nuevamente</string>
+    <string name="muchas_gracias">Muchas gracias!</string>
+    <string name="total">Total</string>
+    <string name="modificar">Modificar</string>
+    <string name="comentar">Comentar</string>
+    <string name="repetir_pedido">Repetir pedido</string>
+    <string name="autor">Autor</string>
+</resources>
