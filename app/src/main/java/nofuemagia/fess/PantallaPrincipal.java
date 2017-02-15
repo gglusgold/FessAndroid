@@ -19,7 +19,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -264,10 +263,19 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     }
 
     private void mostrarMisCompras() {
+
+        MisComprasFragment fragment = new MisComprasFragment();
+        fragment.setOnMisCompras(new MisComprasFragment.onMisCompras() {
+            @Override
+            public void modificarCompra(Compras compra) {
+
+            }
+        });
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.frag_container, new MisComprasFragment())
+                .replace(R.id.frag_container, fragment)
                 .commitNow();
     }
 
@@ -292,23 +300,23 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         switch (item.getItemId()) {
             case R.id.nav_home:
                 mostrarNoticias();
-                drawerLayout.closeDrawer(Gravity.START);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
             case R.id.nav_productos:
                 mostrarComprar();
-                drawerLayout.closeDrawer(Gravity.START);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
             case R.id.nav_carrito:
                 mostrarMisCompras();
-                drawerLayout.closeDrawer(Gravity.START);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
             case R.id.nav_log_out:
                 pref.edit().clear().apply();
                 mostrarNoticias();
-                drawerLayout.closeDrawer(Gravity.START);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
         }
         return false;

@@ -45,9 +45,9 @@ import nofuemagia.fess.modelo.Productos;
  */
 public class MisComprasFragment extends Fragment {
 
+    public onMisCompras mOnMisCompras;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private RecyclerView rvMisEventos;
-
     private SharedPreferences pref;
 
     @Nullable
@@ -71,6 +71,10 @@ public class MisComprasFragment extends Fragment {
         buscarCompras();
 
         return v;
+    }
+
+    public void setOnMisCompras(onMisCompras omc) {
+        mOnMisCompras = omc;
     }
 
     private void buscarCompras() {
@@ -112,7 +116,7 @@ public class MisComprasFragment extends Fragment {
     }
 
     private void comentarPedido(Compras compra) {
-//        mOn
+        mOnMisCompras.modificarCompra(compra);
     }
 
     private void editarPedido(Compras compra) {
@@ -147,6 +151,10 @@ public class MisComprasFragment extends Fragment {
 
             }
         });
+    }
+
+    public interface onMisCompras {
+        void modificarCompra(Compras compra);
     }
 
     private class MisComprasAdapter extends AbstractExpandableItemAdapter<MisComprasAdapter.CompraViewHolder, MisComprasAdapter.ProductosViewHolder> {
