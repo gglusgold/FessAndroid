@@ -68,7 +68,11 @@ public class MisComprasFragment extends Fragment {
                     }
                 }
         );
-        buscarCompras();
+
+        if (pref.getBoolean(Aplicacion.LOGUEADO, false)) {
+            buscarCompras();
+        }
+
 
         return v;
     }

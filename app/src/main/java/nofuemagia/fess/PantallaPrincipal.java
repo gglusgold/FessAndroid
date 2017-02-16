@@ -50,6 +50,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     SharedPreferences pref;
     private DrawerLayout drawerLayout;
     private ComprasFragment comprasFragment;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         toolbar.setSubtitle(getString(R.string.sub_titulo));
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState == null)
@@ -94,7 +95,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
 
     private void pedir() {
 
-        boolean logueado = pref.getBoolean(Aplicacion.USUARIO, false);
+        boolean logueado = pref.getBoolean(Aplicacion.LOGUEADO, false);
 
         if (!logueado) {
             mostrarIniciar();
@@ -186,7 +187,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                             .putString(Aplicacion.TELEFONO, Vecino.optString("telefono"))
                             .putInt(Aplicacion.COMUNA, Vecino.optInt("comuna"))
                             .putString(Aplicacion.CORREO, correo)
-                            .putBoolean(Aplicacion.USUARIO, true)
+                            .putBoolean(Aplicacion.LOGUEADO, true)
                             .apply();
 
                     Type listType = new TypeToken<List<Categorias>>() {
@@ -248,6 +249,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     }
 
     private void mostrarNoticias() {
+        navigationView.setCheckedItem(R.id.nav_home);
         getSupportFragmentManager()
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -256,6 +258,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     }
 
     private void mostrarComprar(Bundle args) {
+        navigationView.setCheckedItem(R.id.nav_productos);
         comprasFragment = (ComprasFragment) Fragment.instantiate(this, ComprasFragment.class.getName(), args);
         getSupportFragmentManager()
                 .beginTransaction()
@@ -265,7 +268,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     }
 
     private void mostrarMisCompras() {
-
+        navigationView.setCheckedItem(R.id.nav_carrito);
         MisComprasFragment fragment = new MisComprasFragment();
         fragment.setOnMisCompras(new MisComprasFragment.onMisCompras() {
             @Override
@@ -281,6 +284,10 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.frag_container, fragment)
                 .commitNow();
+
+        if ( !pref.getBoolean(Aplicacion.LOGUEADO, false)){
+            mostrarIniciar();
+        }
     }
 
 

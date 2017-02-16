@@ -18,7 +18,7 @@ public class Aplicacion extends Application {
     public static final String TELEFONO = "TELEFONO";
     public static final String COMUNA = "COMUNA";
     public static final String CORREO = "CORREO";
-    public static final String USUARIO = "USUARIO";
+    public static final String LOGUEADO = "LOGUEADO";
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
