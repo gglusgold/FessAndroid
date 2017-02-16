@@ -13,6 +13,7 @@ import github.chenupt.springindicator.viewpager.ScrollerViewPager;
 import nofuemagia.fess.ComprasPagerAdapter;
 import nofuemagia.fess.PantallaPrincipal;
 import nofuemagia.fess.R;
+import nofuemagia.fess.modelo.Compras;
 
 /**
  * Created by jlionti on 14/02/2017. No Fue Magia
@@ -21,16 +22,24 @@ public class ComprasFragment extends Fragment {
 
     private ScrollerViewPager viewPager;
     private ComprasPagerAdapter adapter;
+    private boolean editando;
+    private Compras compras;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_compra, container, false);
 
+        Bundle args = getArguments();
+        if (args != null) {
+            editando = true;
+            compras = args.getParcelable("Compra");
+        }
+
         viewPager = (ScrollerViewPager) v.findViewById(R.id.view_pager);
         SpringIndicator springIndicator = (SpringIndicator) v.findViewById(R.id.indicator);
 
-        adapter = new ComprasPagerAdapter(getContext(), getChildFragmentManager());
+        adapter = new ComprasPagerAdapter(getContext(), getChildFragmentManager(), editando ? compras : null);
         adapter.setOnAdapter(new ComprasPagerAdapter.OnAdapter() {
             @Override
             public void mostrarConfimar(boolean visible) {
@@ -59,6 +68,9 @@ public class ComprasFragment extends Fragment {
         });
         springIndicator.setViewPager(viewPager);
 
+        if (editando)
+            viewPager.setCurrentItem(2, false);
+
         return v;
     }
 
@@ -70,5 +82,12 @@ public class ComprasFragment extends Fragment {
 
     public ComprasPagerAdapter getAdapter() {
         return adapter;
+    }
+
+    public int getIdCompra() {
+        if (editando)
+            return compras.getIdCompra();
+        else
+            return -1;
     }
 }

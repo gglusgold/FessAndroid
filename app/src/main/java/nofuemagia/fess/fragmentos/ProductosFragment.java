@@ -93,12 +93,12 @@ public class ProductosFragment extends Fragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 System.out.println(response);
-
                 Type listType = new TypeToken<List<Categorias>>() {
                 }.getType();
                 List<Categorias> lista = new Gson().fromJson(response.toString(), listType);
 
                 mostrarProductos(lista);
+                mOnProductosListener.terminoCargar(lista);
             }
 
             @Override
@@ -112,10 +112,28 @@ public class ProductosFragment extends Fragment {
         this.mOnProductosListener = mOnProductosListener;
     }
 
+    public void actualizarLista(List<Categorias> lista, List<Productos> productos) {
+
+        for (Categorias cat : lista) {
+            for (Productos prodCat : cat.getProductos()) {
+                for (Productos prod : productos) {
+                    if (prodCat.getIdProducto() == prod.getIdProducto()) {
+                        prodCat.setPedidos(prod.getCantidad());
+                        mOnProductosListener.añadirProductos(prodCat);
+                    }
+                }
+            }
+        }
+
+        mostrarProductos(lista);
+    }
+
     public interface OnProductosListener {
         void añadirProductos(Productos productos);
 
         void sacarProductos(Productos productos);
+
+        void terminoCargar(List<Categorias> lista);
     }
 
     private class ProductosAdapter extends AbstractExpandableItemAdapter<ProductosAdapter.CategoriaViewHolder, ProductosAdapter.GeneralViewHolder> {
@@ -195,10 +213,7 @@ public class ProductosFragment extends Fragment {
                     int pedidos = productos.getPedidos() + 1;
                     productos.setPedidos(pedidos);
                     mostrarPedidos(holder, productos);
-//                    añadirProducto(productos);
                     mOnProductosListener.añadirProductos(productos);
-//                    listaProductos.add(productos);
-//                    mOnProductosListener.mostarChango(listaProductos.size() != 0);
 
                 }
             });

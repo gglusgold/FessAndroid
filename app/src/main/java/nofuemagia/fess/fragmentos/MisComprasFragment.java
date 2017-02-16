@@ -116,11 +116,11 @@ public class MisComprasFragment extends Fragment {
     }
 
     private void comentarPedido(Compras compra) {
-        mOnMisCompras.modificarCompra(compra);
+
     }
 
     private void editarPedido(Compras compra) {
-
+        mOnMisCompras.modificarCompra(compra);
     }
 
     private void cancelarPedido(Compras compra) {

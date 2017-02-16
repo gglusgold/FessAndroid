@@ -14,6 +14,8 @@ import nofuemagia.fess.fragmentos.ConfirmarFragment;
 import nofuemagia.fess.fragmentos.InstructivoFragment;
 import nofuemagia.fess.fragmentos.LocalesFragment;
 import nofuemagia.fess.fragmentos.ProductosFragment;
+import nofuemagia.fess.modelo.Categorias;
+import nofuemagia.fess.modelo.Compras;
 import nofuemagia.fess.modelo.Locales;
 import nofuemagia.fess.modelo.Productos;
 
@@ -24,6 +26,7 @@ import nofuemagia.fess.modelo.Productos;
 public class ComprasPagerAdapter extends FragmentPagerAdapter {
 
     private final ArrayList<Fragment> listadoFragments;
+    private final Compras compras;
     public int idLocal;
     private Set<Productos> listaProductos;
     private InstructivoFragment instructivoFragment;
@@ -33,13 +36,14 @@ public class ComprasPagerAdapter extends FragmentPagerAdapter {
     private OnAdapter mOnAdapter;
 
 
-    public ComprasPagerAdapter(Context c, FragmentManager fm) {
+    public ComprasPagerAdapter(Context c, FragmentManager fm, Compras compras) {
         super(fm);
 
         listadoFragments = new ArrayList<>();
         crearLista(c);
 
-        idLocal = -1;
+        this.compras = compras;
+        idLocal = compras != null ? compras.getIdLocal() : -1;
     }
 
     private void crearLista(Context c) {
@@ -52,7 +56,7 @@ public class ComprasPagerAdapter extends FragmentPagerAdapter {
         instructivoFragment.setOnInstructivoListener(new InstructivoFragment.OnInstructivoListener() {
             @Override
             public void terminoLocales(List<Locales> locales) {
-                localesFragment.mostrarLocales(locales);
+                localesFragment.mostrarLocales(locales, idLocal);
             }
         });
 
@@ -81,6 +85,12 @@ public class ComprasPagerAdapter extends FragmentPagerAdapter {
                 listaProductos.remove(productos);
                 confirmarFragment.sacar(productos);
                 mOnAdapter.mostrarConfimar(listaProductos.size() != 0);
+            }
+
+            @Override
+            public void terminoCargar(List<Categorias> lista) {
+                if ( compras != null )
+                    productosFragment.actualizarLista(lista, compras.getProductos());
             }
         });
 

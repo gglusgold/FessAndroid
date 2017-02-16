@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Categorias {
 
+    private int idCategoria;
     private String nombre;
     private List<Productos> productos;
 
@@ -22,5 +23,9 @@ public class Categorias {
 
     public List<Productos> getProductos() {
         return productos;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
     }
 }

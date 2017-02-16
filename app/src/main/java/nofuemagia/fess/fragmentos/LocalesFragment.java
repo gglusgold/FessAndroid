@@ -24,6 +24,7 @@ public class LocalesFragment extends Fragment {
 
     private LocalListener onLocalListener;
     private RecyclerView rvLocales;
+    private boolean editando;
 
     @Nullable
     @Override
@@ -39,9 +40,15 @@ public class LocalesFragment extends Fragment {
         this.onLocalListener = onLocalListener;
     }
 
-    public void mostrarLocales(List<Locales> locales) {
+    public void mostrarLocales(List<Locales> locales, int idLocal) {
         if (rvLocales != null && locales != null) {
-            rvLocales.setAdapter(new LocalesAdapter(locales));
+
+            if (idLocal != -1) {
+                editando = true;
+                onLocalListener.localSeleccionado(idLocal);
+            }
+
+            rvLocales.setAdapter(new LocalesAdapter(locales, idLocal));
             rvLocales.setLayoutManager(new LinearLayoutManager(getContext()));
         }
     }
@@ -66,8 +73,13 @@ public class LocalesFragment extends Fragment {
         private final List<Locales> mDataset;
         private boolean onBind;
 
-        LocalesAdapter(List<Locales> locales) {
+        LocalesAdapter(List<Locales> locales, int idLocal) {
             mDataset = locales;
+            if (idLocal != -1)
+                for (Locales local : locales) {
+                    if (local.getIdLocal() == idLocal)
+                        local.setSeleccionado(true);
+                }
         }
 
         @Override
@@ -121,27 +133,28 @@ public class LocalesFragment extends Fragment {
                 tvNombre = (TextView) itemView.findViewById(R.id.tv_nombre);
                 tvHorario = (TextView) itemView.findViewById(R.id.tv_horario);
 
-                cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                if (!editando)
+                    cardView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
-                        Locales actual = mDataset.get(getAdapterPosition());
-                        actual.setSeleccionado(!actual.seleccionado());
+                            Locales actual = mDataset.get(getAdapterPosition());
+                            actual.setSeleccionado(!actual.seleccionado());
 
-                        for (int x = 0; x < mDataset.size(); x++) {
-                            if (x != getAdapterPosition()) {
-                                Locales ubi = mDataset.get(x);
-                                ubi.setSeleccionado(false);
+                            for (int x = 0; x < mDataset.size(); x++) {
+                                if (x != getAdapterPosition()) {
+                                    Locales ubi = mDataset.get(x);
+                                    ubi.setSeleccionado(false);
+                                }
                             }
+
+                            if (actual.seleccionado() && onLocalListener != null)
+                                onLocalListener.localSeleccionado(actual.getIdLocal());
+
+                            if (!onBind)
+                                rvLocales.getAdapter().notifyDataSetChanged();
                         }
-
-                        if (actual.seleccionado() && onLocalListener != null)
-                            onLocalListener.localSeleccionado(actual.getIdLocal());
-
-                        if (!onBind)
-                            rvLocales.getAdapter().notifyDataSetChanged();
-                    }
-                });
+                    });
 
 
             }

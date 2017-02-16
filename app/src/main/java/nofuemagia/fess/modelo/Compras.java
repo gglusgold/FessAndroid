@@ -1,5 +1,8 @@
 package nofuemagia.fess.modelo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -7,7 +10,7 @@ import java.util.List;
  * No Fue Magia
  */
 
-public class Compras {
+public class Compras implements Parcelable {
     private int idCompra;
     private String estado;
     private String fecha;
@@ -24,6 +27,31 @@ public class Compras {
 
     public Compras() {
     }
+
+    protected Compras(Parcel in) {
+        idCompra = in.readInt();
+        estado = in.readString();
+        fecha = in.readString();
+        idLocal = in.readInt();
+        local = in.readString();
+        barrio = in.readString();
+        comuna = in.readInt();
+        editar = in.readByte() != 0;
+        comentar = in.readByte() != 0;
+        comentado = in.readByte() != 0;
+    }
+
+    public static final Creator<Compras> CREATOR = new Creator<Compras>() {
+        @Override
+        public Compras createFromParcel(Parcel in) {
+            return new Compras(in);
+        }
+
+        @Override
+        public Compras[] newArray(int size) {
+            return new Compras[size];
+        }
+    };
 
     public int getIdCompra() {
         return idCompra;
@@ -70,4 +98,22 @@ public class Compras {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(idCompra);
+        parcel.writeString(estado);
+        parcel.writeString(fecha);
+        parcel.writeInt(idLocal);
+        parcel.writeString(local);
+        parcel.writeString(barrio);
+        parcel.writeInt(comuna);
+        parcel.writeByte((byte) (editar ? 1 : 0));
+        parcel.writeByte((byte) (comentar ? 1 : 0));
+        parcel.writeByte((byte) (comentado ? 1 : 0));
+    }
 }

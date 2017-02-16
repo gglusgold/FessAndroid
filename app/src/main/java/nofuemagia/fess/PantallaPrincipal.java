@@ -74,7 +74,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState == null)
-            comprasFragment = new ComprasFragment();
+            comprasFragment = (ComprasFragment) Fragment.instantiate(this, ComprasFragment.class.getName());
 
         mostrarNoticias();
     }
@@ -219,6 +219,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         params.put("idVecino", pref.getInt(Aplicacion.IDVECINO, -1));
         params.put("local", adapter.getIdLocal());
         params.put("productos", gson.toJson(adapter.listaProductos()));
+        params.put("idCompra", comprasFragment.getIdCompra());
 
         ComunicacionClient client = new ComunicacionClient();
         client.post(ComunicacionClient.PEDIR, params, new JsonHttpResponseHandler() {
@@ -254,7 +255,8 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 .commitNow();
     }
 
-    private void mostrarComprar() {
+    private void mostrarComprar(Bundle args) {
+        comprasFragment = (ComprasFragment) Fragment.instantiate(this, ComprasFragment.class.getName(), args);
         getSupportFragmentManager()
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -268,7 +270,9 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         fragment.setOnMisCompras(new MisComprasFragment.onMisCompras() {
             @Override
             public void modificarCompra(Compras compra) {
-
+                Bundle args = new Bundle();
+                args.putParcelable("Compra", compra);
+                mostrarComprar(args);
             }
         });
 
@@ -287,7 +291,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         Fragment fActual = getSupportFragmentManager().findFragmentById(R.id.frag_container);
 
         MenuItem miConfirmar = menu.findItem(R.id.action_confirmar);
-        if (comprasFragment.getCurrentItem() == 3 && fActual instanceof ComprasFragment)
+        if (comprasFragment != null && comprasFragment.getCurrentItem() == 3 && fActual instanceof ComprasFragment)
             miConfirmar.setVisible(confirmar);
         else
             miConfirmar.setVisible(false);
@@ -304,7 +308,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 return true;
 
             case R.id.nav_productos:
-                mostrarComprar();
+                mostrarComprar(null);
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
