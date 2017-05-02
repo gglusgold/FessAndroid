@@ -46,6 +46,11 @@ public class ComprasFragment extends Fragment {
                 PantallaPrincipal.confirmar = visible;
                 getActivity().invalidateOptionsMenu();
             }
+
+            @Override
+            public void localSeleccionado() {
+                viewPager.setCurrentItem(2, true);
+            }
         });
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(4);

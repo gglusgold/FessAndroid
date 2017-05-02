@@ -55,7 +55,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
 
     private static final int REG_CODE = 99;
     public static boolean confirmar = false;
-    SharedPreferences pref;
+    private SharedPreferences pref;
     private DrawerLayout drawerLayout;
     private ComprasFragment comprasFragment;
     private NavigationView navigationView;
@@ -280,13 +280,29 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 String error = response.optString("error");
                 if (TextUtils.isEmpty(error)) {
+
+                    AlertDialog builder = new AlertDialog.Builder(PantallaPrincipal.this)
+                            .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_cart_lleno, null))
+                            .setTitle(R.string.gracias)
+                            .setMessage(R.string.confirmado)
+                            .setPositiveButton(R.string.mis_compras, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    mostrarMisCompras();
+                                    invalidateOptionsMenu();
+                                }
+                            })
+                            .setNegativeButton(R.string.cerrar, null).create();
+                    builder.show();
+
+                    /*
                     Aplicacion.mostrarSnack(findViewById(R.id.frag_container), getResources().getString(R.string.muchas_gracias), new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             mostrarMisCompras();
                             invalidateOptionsMenu();
                         }
-                    });
+                    });*/
                 } else
                     Aplicacion.mostrarSnack(findViewById(R.id.frag_container), error, null);
 
@@ -374,6 +390,10 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 mostrarMisCompras();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
+
+            case R.id.nav_ayuda:
+                Intent ayuda = new Intent(this, Ayuda.class);
+                startActivity(ayuda);
 
             case R.id.nav_log_out:
                 pref.edit().clear().apply();

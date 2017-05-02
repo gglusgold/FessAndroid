@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import nofuemagia.fess.Aplicacion;
 import nofuemagia.fess.otros.ComunicacionClient;
 import nofuemagia.fess.R;
 import nofuemagia.fess.modelo.Locales;
@@ -55,19 +57,23 @@ public class InstructivoFragment extends Fragment {
         client.get(url, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Type listType = new TypeToken<List<Locales>>() {
-                }.getType();
-                List<Locales> yourList = new Gson().fromJson(String.valueOf(response.optJSONArray("Lista")), listType);
+                String error = response.optString("Error");
+                if (TextUtils.isEmpty(error)) {
+                    Type listType = new TypeToken<List<Locales>>() {
+                    }.getType();
+                    List<Locales> yourList = new Gson().fromJson(String.valueOf(response.optJSONArray("Lista")), listType);
 
-                Collections.sort(yourList, new Comparator<Locales>() {
-                    public int compare(Locales s1, Locales s2) {
-                        return s1.getComuna() < s2.getComuna() ? -1 : 1;
-                    }
-                });
+                    Collections.sort(yourList, new Comparator<Locales>() {
+                        public int compare(Locales s1, Locales s2) {
+                            return s1.getComuna() < s2.getComuna() ? -1 : 1;
+                        }
+                    });
 
 
-                actualizarFecha(response.optString("Proxima"));
-                mOnInstructivoListener.terminoLocales(yourList);
+                    actualizarFecha(response.optString("Proxima"));
+                    mOnInstructivoListener.terminoLocales(yourList);
+                } else
+                    Aplicacion.mostrarSnack(tvFecha, error, null);
             }
 
             @Override

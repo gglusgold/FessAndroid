@@ -28,4 +28,8 @@
     <string name="mail_invalido">El mail no es válido</string>
     <string name="deben_coincidir">Las contraseñas tienen que coincidir</string>
     <string name="error_noticias">No se pudieron traer las noticias</string>
+    <string name="confirmado">Tu pedido ha sido confirmado! </string>
+    <string name="gracias">¡Muchas gracias!</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="mis_compras">Ver compras</string>
 </resources>

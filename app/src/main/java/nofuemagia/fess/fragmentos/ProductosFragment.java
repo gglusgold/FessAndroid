@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -47,6 +48,7 @@ public class ProductosFragment extends Fragment {
     ComunicacionClient client;
     private OnProductosListener mOnProductosListener;
     private RecyclerView rvProductos;
+    private SwipeRefreshLayout mySwipeRefreshLayout;
 
     public ProductosFragment() {
         client = new ComunicacionClient();
@@ -56,14 +58,19 @@ public class ProductosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        rvProductos = (RecyclerView) inflater.inflate(R.layout.fragment_producos, container, false);
+        View v = inflater.inflate(R.layout.fragment_producos, container, false);
+
+        mySwipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.sf_productos);
+        mySwipeRefreshLayout.setRefreshing(true);
+
+        rvProductos = (RecyclerView) v.findViewById(R.id.rv_productos);
         rvProductos.setHasFixedSize(true);
         rvProductos.setItemViewCacheSize(20);
         rvProductos.setDrawingCacheEnabled(true);
         rvProductos.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
 
-        return rvProductos;
+        return v;
     }
 
     public void mostrarProductos(List<Categorias> productos) {
@@ -99,10 +106,15 @@ public class ProductosFragment extends Fragment {
 
                 mostrarProductos(lista);
                 mOnProductosListener.terminoCargar(lista);
+
+                mySwipeRefreshLayout.setEnabled(false);
+                mySwipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                mySwipeRefreshLayout.setEnabled(false);
+                mySwipeRefreshLayout.setRefreshing(false);
                 Snackbar.make(rvProductos, R.string.error_comunicacion, Snackbar.LENGTH_LONG).show();
             }
         });
@@ -207,14 +219,16 @@ public class ProductosFragment extends Fragment {
                 sacarPedidos(holder);
             }
 
+            holder.ivProducto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    sumarPedido(productos, holder);
+                }
+            });
             holder.btnPedir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int pedidos = productos.getPedidos() + 1;
-                    productos.setPedidos(pedidos);
-                    mostrarPedidos(holder, productos);
-                    mOnProductosListener.añadirProductos(productos);
-
+                    sumarPedido(productos, holder);
                 }
             });
 
@@ -224,11 +238,16 @@ public class ProductosFragment extends Fragment {
                     productos.setPedidos(0);
                     sacarPedidos(holder);
                     mOnProductosListener.sacarProductos(productos);
-//                    listaProductos.remove(productos);
-//                    mostarChango();
                 }
             });
 
+        }
+
+        private void sumarPedido(Productos productos, GeneralViewHolder holder) {
+            int pedidos = productos.getPedidos() + 1;
+            productos.setPedidos(pedidos);
+            mostrarPedidos(holder, productos);
+            mOnProductosListener.añadirProductos(productos);
         }
 
         private void sacarPedidos(GeneralViewHolder holder) {

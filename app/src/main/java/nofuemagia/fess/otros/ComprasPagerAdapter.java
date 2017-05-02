@@ -69,6 +69,7 @@ public class ComprasPagerAdapter extends FragmentPagerAdapter {
                 mOnAdapter.mostrarConfimar(listaProductos.size() != 0);
                 confirmarFragment.vaciar();
                 ComprasPagerAdapter.this.idLocal = idLocal;
+                mOnAdapter.localSeleccionado();
             }
         });
 
@@ -141,5 +142,7 @@ public class ComprasPagerAdapter extends FragmentPagerAdapter {
 
     public interface OnAdapter {
         void mostrarConfimar(boolean visible);
+
+        void localSeleccionado();
     }
 }
