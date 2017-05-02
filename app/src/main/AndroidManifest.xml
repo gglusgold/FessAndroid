@@ -29,10 +29,12 @@
 
         <activity
             android:name=".actividades.PantallaPrincipal"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".actividades.Registrarse"
+            android:screenOrientation="portrait"
             android:theme="@style/Registrarse" />
 
 

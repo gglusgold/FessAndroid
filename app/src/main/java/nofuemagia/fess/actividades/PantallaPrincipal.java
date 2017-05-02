@@ -295,14 +295,6 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                             .setNegativeButton(R.string.cerrar, null).create();
                     builder.show();
 
-                    /*
-                    Aplicacion.mostrarSnack(findViewById(R.id.frag_container), getResources().getString(R.string.muchas_gracias), new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            mostrarMisCompras();
-                            invalidateOptionsMenu();
-                        }
-                    });*/
                 } else
                     Aplicacion.mostrarSnack(findViewById(R.id.frag_container), error, null);
 

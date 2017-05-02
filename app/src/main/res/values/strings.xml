@@ -32,4 +32,6 @@
     <string name="gracias">¡Muchas gracias!</string>
     <string name="cerrar">Cerrar</string>
     <string name="mis_compras">Ver compras</string>
+    <string name="cancelar_pedido">¡Cancelar pedido!</string>
+    <string name="cancelar_confirmacion">¿Está segurx que desea cancelar el pedido?</string>
 </resources>
