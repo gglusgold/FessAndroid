@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 import cz.msebera.android.httpclient.Header;
-import nofuemagia.fess.ComunicacionClient;
+import nofuemagia.fess.otros.ComunicacionClient;
 import nofuemagia.fess.R;
 import nofuemagia.fess.modelo.Categorias;
 import nofuemagia.fess.modelo.Productos;

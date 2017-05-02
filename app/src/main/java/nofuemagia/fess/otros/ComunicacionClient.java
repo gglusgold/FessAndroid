@@ -1,4 +1,4 @@
-package nofuemagia.fess;
+package nofuemagia.fess.otros;
 
 import com.loopj.android.http.AsyncHttpClient;
 
@@ -11,8 +11,9 @@ public class ComunicacionClient extends AsyncHttpClient {
 
     private static final int TIMEOUT = 20 * 10000;
 
-    private static final boolean debug = true;
-    private static final String URL_DEBUG = "http://magyp-iis-desa.magyp.ar:5012/";
+    private static final boolean debug = false;
+    private static final String URL_DEBUG = "http://economiasocial.somee.com/";
+    //    private static final String URL_DEBUG = "http://magyp-iis-desa.magyp.ar:5012/";
     private static final String URL = "http://economiasocial.somee.com/";
 
     public static final String URL_IMAGNES = getUrl() + "Imagenes/Producto-";
@@ -28,6 +29,10 @@ public class ComunicacionClient extends AsyncHttpClient {
     public static final String PEDIR = getUrl() + "api/apiproductos/Pedir";
     public static final String MIS_COMPRAS = getUrl() + "api/apiproductos/MisCompras";
     public static final String CANCELAR_PEDIDO = getUrl() + "api/apiproductos/CancelarPedido";
+
+    public static final String MANDAR_TOKEN = getUrl() + "api/apiproductos/ActualizarToken";
+    public static final String REGISTRARSE = getUrl() + "api/apiproductos/Registrarse";
+
 
     public ComunicacionClient() {
         super();

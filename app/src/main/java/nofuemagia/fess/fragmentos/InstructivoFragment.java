@@ -21,7 +21,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
-import nofuemagia.fess.ComunicacionClient;
+import nofuemagia.fess.otros.ComunicacionClient;
 import nofuemagia.fess.R;
 import nofuemagia.fess.modelo.Locales;
 

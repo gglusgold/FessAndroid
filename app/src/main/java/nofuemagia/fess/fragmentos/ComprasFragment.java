@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import github.chenupt.springindicator.SpringIndicator;
 import github.chenupt.springindicator.viewpager.ScrollerViewPager;
-import nofuemagia.fess.ComprasPagerAdapter;
-import nofuemagia.fess.PantallaPrincipal;
+import nofuemagia.fess.otros.ComprasPagerAdapter;
+import nofuemagia.fess.actividades.PantallaPrincipal;
 import nofuemagia.fess.R;
 import nofuemagia.fess.modelo.Compras;
 

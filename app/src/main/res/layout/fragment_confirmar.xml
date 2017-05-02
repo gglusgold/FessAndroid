@@ -10,7 +10,7 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingStart="10dp"
-    tools:context=".PantallaPrincipal">
+    tools:context=".actividades.PantallaPrincipal">
 
     <TextView
         android:id="@+id/textView"

@@ -17,6 +17,7 @@
 
         <!-- Sección de configuración -->
         <item
+            android:visible="false"
             android:id="@+id/configuration_section"
             android:title="Configuración">
             <menu>

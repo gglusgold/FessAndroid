@@ -25,4 +25,6 @@
     <string name="comentar">Comentar</string>
     <string name="repetir_pedido">Repetir pedido</string>
     <string name="autor">Autor</string>
+    <string name="mail_invalido">El mail no es válido</string>
+    <string name="deben_coincidir">Las contraseñas tienen que coincidir</string>
 </resources>

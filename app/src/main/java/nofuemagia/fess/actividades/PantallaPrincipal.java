@@ -1,9 +1,11 @@
-package nofuemagia.fess;
+package nofuemagia.fess.actividades;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -25,6 +27,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -38,19 +41,26 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import nofuemagia.fess.Aplicacion;
+import nofuemagia.fess.R;
 import nofuemagia.fess.fragmentos.ComprasFragment;
 import nofuemagia.fess.fragmentos.MisComprasFragment;
 import nofuemagia.fess.fragmentos.NoticiasFragment;
 import nofuemagia.fess.modelo.Categorias;
 import nofuemagia.fess.modelo.Compras;
+import nofuemagia.fess.otros.ComprasPagerAdapter;
+import nofuemagia.fess.otros.ComunicacionClient;
 
 public class PantallaPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final int REG_CODE = 99;
     public static boolean confirmar = false;
     SharedPreferences pref;
     private DrawerLayout drawerLayout;
     private ComprasFragment comprasFragment;
     private NavigationView navigationView;
+    private MenuItem cerrarSesion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,10 +84,38 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        cerrarSesion = navigationView.getMenu().findItem(R.id.configuration_section);
+        cerrarSesion.setVisible(pref.getBoolean(Aplicacion.LOGUEADO, false));
+
         if (savedInstanceState == null)
             comprasFragment = (ComprasFragment) Fragment.instantiate(this, ComprasFragment.class.getName());
 
-        mostrarNoticias();
+
+        dondeAbrir(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        dondeAbrir(intent);
+    }
+
+    private void dondeAbrir(final Intent intent) {
+        new Handler().post(new Runnable() {
+            public void run() {
+                String donde = intent != null ? intent.getExtras() != null ? intent.getExtras().getString(Aplicacion.DONDE) : null : null;
+                if (donde != null)
+                    switch (donde) {
+                        case Aplicacion.CARRITO:
+                            mostrarComprar(null);
+                            break;
+                        case Aplicacion.MISCOMPRAS:
+                            mostrarMisCompras();
+                            break;
+                    }
+                else
+                    mostrarNoticias();
+            }
+        });
     }
 
     @Override
@@ -98,7 +136,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         boolean logueado = pref.getBoolean(Aplicacion.LOGUEADO, false);
 
         if (!logueado) {
-            mostrarIniciar();
+            mostrarIniciar(true);
         } else {
             confirmarPedido();
         }
@@ -120,7 +158,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     }
 
 
-    private void mostrarIniciar() {
+    private void mostrarIniciar(final boolean pidiendo) {
         final View v = View.inflate(this, R.layout.dialog_iniciar, null);
         AppCompatButton btnIngresar = (AppCompatButton) v.findViewById(R.id.btn_ingresar_login);
 
@@ -128,7 +166,13 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_iniciarsesion, null))
                 .setTitle(R.string.iniciar_sesion)
                 .setView(v)
-                .setNeutralButton(R.string.registrarse, null).create();
+                .setNeutralButton(R.string.registrarse, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent reg = new Intent(PantallaPrincipal.this, Registrarse.class);
+                        startActivityForResult(reg, REG_CODE);
+                    }
+                }).create();
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +201,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                     return;
                 }
 
-                IniciarSesion(etCorreo.getText().toString(), etContraseña.getText().toString(), builder, v);
+                IniciarSesion(etCorreo.getText().toString(), etContraseña.getText().toString(), builder, v, pidiendo);
             }
         });
 
@@ -165,11 +209,12 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         builder.show();
     }
 
-    private void IniciarSesion(final String correo, String pass, final AlertDialog builder, final View v) {
+    private void IniciarSesion(final String correo, String pass, final AlertDialog builder, final View v, final boolean pidiendo) {
 
         RequestParams params = new RequestParams();
         params.put("correo", correo);
         params.put("pass", pass);
+        params.put("token", FirebaseInstanceId.getInstance().getToken());
 
         ComunicacionClient client = new ComunicacionClient();
         client.post(ComunicacionClient.INICIAR_SESION, params, new JsonHttpResponseHandler() {
@@ -190,12 +235,17 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                             .putBoolean(Aplicacion.LOGUEADO, true)
                             .apply();
 
+                    cerrarSesion.setVisible(pref.getBoolean(Aplicacion.LOGUEADO, false));
+
                     Type listType = new TypeToken<List<Categorias>>() {
                     }.getType();
                     List<Compras> historico = new Gson().fromJson(response.optJSONArray("Historico").toString(), listType);
 
                     builder.dismiss();
-                    confirmarPedido();
+
+                    if (pidiendo)
+                        confirmarPedido();
+
                 }
             }
 
@@ -285,8 +335,8 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 .replace(R.id.frag_container, fragment)
                 .commitNow();
 
-        if ( !pref.getBoolean(Aplicacion.LOGUEADO, false)){
-            mostrarIniciar();
+        if (!pref.getBoolean(Aplicacion.LOGUEADO, false)) {
+            mostrarIniciar(false);
         }
     }
 
@@ -328,6 +378,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                 pref.edit().clear().apply();
                 mostrarNoticias();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                cerrarSesion.setVisible(pref.getBoolean(Aplicacion.LOGUEADO, false));
                 return true;
         }
         return false;

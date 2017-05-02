@@ -20,6 +20,10 @@ public class Aplicacion extends Application {
     public static final String CORREO = "CORREO";
     public static final String LOGUEADO = "LOGUEADO";
 
+    public static final String DONDE = "DONDE";
+    public static final String MISCOMPRAS = "MISCOMPRAS";
+    public static final String CARRITO = "CARRITO";
+
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }

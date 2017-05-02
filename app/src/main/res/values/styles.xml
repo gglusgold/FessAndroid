@@ -39,6 +39,26 @@
 
     </style>
 
+
+    <style name="Registrarse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/blanco</item>
+
+        <item name="android:textColorHint">@color/blanco</item>
+    </style>
+
+
+    <style name="EditText.Login" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="colorAccent">@color/blanco</item>
+        <item name="colorControlNormal">@color/blanco</item>
+        <item name="colorControlActivated">@color/blanco</item>
+    </style>
+
     <style name="SpinnerCategorias" parent="Base.Widget.AppCompat.Spinner">
         <item name="android:dropDownSelector">#FFFFFF</item>
     </style>
@@ -47,6 +67,11 @@
         <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
         <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="spinner_blanco" parent="Base.Widget.AppCompat.Spinner">
+
+        <item name="android:textColor">@color/blanco</item>
     </style>
 
 

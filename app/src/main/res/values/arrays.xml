@@ -6,4 +6,29 @@
         <item>@color/indicator_3</item>
         <item>@color/indicator_4</item>
     </array>
+
+    <array name="comunas">
+        <item>Seleccione Una Opción</item>
+        <item>Comuna 1 ( Retiro, San Nicolás, Puerto Madero, San Telmo, Montserrat y Constitución
+            )
+        </item>
+        <item>Comuna 2 ( Recoleta )</item>
+        <item>Comuna 3 ( San Cristóbal y Balvanera )</item>
+        <item>Comuna 4 ( Boca, Barracas, Parque Patricios y Nueva Pompeya )</item>
+        <item>Comuna 5 ( Almagro y Boedo )</item>
+        <item>Comuna 6 ( Caballito )</item>
+        <item>Comuna 7 ( Flores y Parque Chacabuco )</item>
+        <item>Comuna 8 ( Villa Soldati, Villa Riachuelo y Villa Lugan )</item>
+        <item>Comuna 9 ( Parque Avellaneda, Liniers y Mataderos )</item>
+        <item>Comuna 10 ( Villa Real, Monte Castro, Versalles, Floresta, Vélez Sarsfield y Villa
+            Luro )
+        </item>
+        <item>Comuna 11 ( Villa Gral. Mitre, Villa Devoto, Villa del Parque y Villa Santa Rita )
+        </item>
+        <item>Comuna 12 ( Coghlan, Saavedra, Villa Urquiza y Villa Pueyrredón )</item>
+        <item>Comuna 13 ( Belgrano, Núñez y Colegiales )</item>
+        <item>Comuna 14 ( Palermo )</item>
+        <item>Comuna 15 ( Chacarita, Villa Crespo, Paternal, Villa Ortúzar y Agronomía )</item>
+        <item>Gran Bs As</item>
+    </array>
 </resources>
