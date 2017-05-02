@@ -132,7 +132,7 @@ public class MisComprasFragment extends Fragment {
 
     private void cancelarPedido(final Compras compra) {
         AlertDialog builder = new AlertDialog.Builder(getContext())
-                .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_cancelar, null))
+                .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_cancelar_partido, null))
                 .setTitle(R.string.cancelar_pedido)
                 .setMessage(R.string.cancelar_confirmacion)
                 .setPositiveButton(R.string.confirmar, new DialogInterface.OnClickListener() {
