@@ -8,13 +8,19 @@ import com.loopj.android.http.AsyncHttpClient;
  */
 public class ComunicacionClient extends AsyncHttpClient {
 
+    public enum Servidores {
+        PRODUCCION,
+        ECONO,
+        DESA,
+        TRABAJO,
+        CASA
+    }
+
 
     private static final int TIMEOUT = 20 * 10000;
 
-    private static final boolean debug = false;
-    private static final String URL_DEBUG = "http://economiasocial.somee.com/";
-    //    private static final String URL_DEBUG = "http://magyp-iis-desa.magyp.ar:5012/";
-    private static final String URL = "http://economiasocial.somee.com/";
+    private static final boolean debug = true;
+    private static Servidores actual = Servidores.TRABAJO;
 
     public static final String URL_IMAGNES = getUrl() + "Imagenes/Producto-";
 
@@ -45,9 +51,17 @@ public class ComunicacionClient extends AsyncHttpClient {
         setLoggingEnabled(true);
     }
 
-    static String getUrl() {
-        if (debug)
-            return URL_DEBUG;
-        return URL;
+    private static String getUrl() {
+        if (debug) {
+            if (actual == Servidores.ECONO)
+                return "http://econosocial.somee.com/";
+            else if (actual == Servidores.DESA)
+                return "http://magyp-iis-desa.magyp.ar:5012/";
+            else if (actual == Servidores.TRABAJO)
+                return "http://192.168.116.61:56693/";
+            else
+                return "";
+        } else
+            return "http://economiasocial.somee.com/";
     }
 }

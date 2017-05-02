@@ -3,12 +3,30 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-10.0.1_97964b6f53c0e95b8c9dea142766abf4bf594782.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Tano\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\glide-3.7.0_8221f516d22c216453645649273c9b4e86eb4caf.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\glide-3.7.0_8221f516d22c216453645649273c9b4e86eb4caf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.h6ah4i.android.widget.advrecyclerview\advrecyclerview\0.10.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="93acec620c48e810a4ef23f44e90f3eefde4cda2">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.h6ah4i.android.widget.advrecyclerview-advrecyclerview-0.10.3_3ae870539caf236c52f91028abe4fc59be49e493.jar" />
     </item>
     <item
         is-multidex="false"
@@ -17,61 +35,25 @@
         optimize="true"
         revision="25.0.1"
         sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\gson-2.4_eac50635bf01d38bbff09f80dfabd0b0bb5cd6df.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\gson-2.4_eac50635bf01d38bbff09f80dfabd0b0bb5cd6df.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_93ae1dc54ef7a783e1cc36c9ac7757bc39c99e01.jar" />
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_9ca43c5238010155e6818a5bc02e335d64f239e9.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_76a118c3a3d72c584c4c59f1ee00f82c631682a4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_4bc33ded384838070f5046381d0538b72e0b5648.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_94c263a58488f8c578e66c19e16848b9f4b3bb71.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-10.0.1_19475317c514f2b4b1dd52068ebe6e4a494872e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-10.0.1_b9861ee760bb38d2ac08f663a6929354c660a355.jar" />
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.0.1_b2a8c321a773783136be5070a777c176606b82f8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -80,151 +62,178 @@
         optimize="true"
         revision="25.0.1"
         sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_9ef02eb3ea606b2a97ad868a9ebb7a11f1f4484f.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_9ef02eb3ea606b2a97ad868a9ebb7a11f1f4484f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.h6ah4i.android.widget.advrecyclerview\advrecyclerview\0.10.3\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="93acec620c48e810a4ef23f44e90f3eefde4cda2">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.h6ah4i.android.widget.advrecyclerview-advrecyclerview-0.10.3_4b098f69b6ac8d1ac8a372dc120f9c7dbe06f465.jar" />
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_adc4bcd3a473b11c10d32a5795afda86ab53aa3c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.3.0\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="fbaffbfc2a42fce3718dc9f52182810ad332b0ec">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.3.0_d884497f4a6e8780cdcdb8e26a7fb8f27e9ec5e3.jar" />
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_557843be372c4567d191c4cdc71a57b83fe4b4d3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="0558e5b6c171bd6719581340f9ac6be4af5ae265">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-25.1.1_a40af595b481fa53ede2857b64edbc218d246c65.jar" />
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_75a57464238caf2ac4449d3d6df2f261326a2505.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_6d0644f9036b55663f89b255fe473003606cea91.jar" />
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-25.3.1_38120a8a0430c86b31adbb7b6d0b4f545a7b5d0b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Tano\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_7c7f82aeebd20af66f995768c2ca4b8ccd6367a3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_f9a8362421bf1ef6f51e1f4d488e77b969d3bb44.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-10.0.1_8a7da3fedbc34c3c95bec28c0661856b7bdf16b0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.3.0_a9bb4e71daaf1f7731f83485894329d1f915f063.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_82933cc5d77ad37cf83160b7f5f4cba883cd0e66.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.0.1_08760a8ae1116e199ff6305324bbefed72edc701.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b7c43c8ddfc4ae2091a33f2882927bb4e3e2fee2">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.github.chenupt.android-springindicator-1.0.2_aedefb19a29c3e3c0d563dc842dd456f740948ee.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_c01756df6a25ba319fd7cb85955da49fefc291f9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-10.0.1_8af17d2f49ea6ac09f461ceeb909e5f4577b762f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.1_2b724c76983ca8f3a8339bc3ecc7dc0cdf06afe2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.1.1_45251ccfec37359ac6679934831202b979c6a064.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.0.1_0a33bf2c8dea68932cb76382083ee7553d096194.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.0.1_2f76c5f5e42f1abce1fa23385962884ebde9add1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.3.0_967bedab52c835175024859131e80762ee427097.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-10.0.1_498a4c03ccf72569d8aad840c1b109da2a5bfaea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_5a32ffe40f74dcbe55bad2529e4f33a4837f12f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-10.0.1_c5fb1245ee96d55a2f12ffec5155cb75d64720a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_ecad2b014ef9f655fb153a36677d50ec63a18951.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_b0d7a60fa4d556b9c497b39607ebbb07668347c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.3.1_53d8200ed708f921d9c9c60e38db43d5f90ed885.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-10.0.1_51d18e110ff57010c7ce5bf655641c55b8f421ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b7c43c8ddfc4ae2091a33f2882927bb4e3e2fee2">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.github.chenupt.android-springindicator-1.0.2_97370cd33be7af88b43bc196e9077dfffb2166c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fbaffbfc2a42fce3718dc9f52182810ad332b0ec">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.3.0_0de60b402c818a768b09d3be995e830ef420a64e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_b5f66c0cdc224174ef60a2499ceec1e7c0e4492e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_d90fc14579ab9e6daca97b284fe71258337bedce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_c336a595380d24808f9af8f01cdaed104dfe50c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_673fa1d110df6bab8121ebea1f6a2e73a0536b5c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -233,43 +242,34 @@
         optimize="true"
         revision="25.0.1"
         sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6_ddd4821f68bbeef75315837c2000541d4eaeae67.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6_ddd4821f68bbeef75315837c2000541d4eaeae67.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_86752a44b1632920f71eadf0c3fcab0b3d0c3780.jar" />
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_1fbf9f154436808d43e94dc170911d145817ff26.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_cd7d22356d8c78f1dc11254dc183847467a565d7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-messaging-10.0.1_d0b37665c9f162501dc6039d32418084002eeec4.jar" />
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-messaging-10.0.1_adbdc842eed8148c11fbd37a177900408e75845e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Proyectos\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="D:\Proyectos\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_16912016a0d7a9e7c88559759a25695f6ed7af5b.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_4f08b27389116ec918fe848535d04f7e0ce29916.jar" />
     </item>
 
 </items>

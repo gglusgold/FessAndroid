@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.customtabs.CustomTabsCallback;
 import android.support.customtabs.CustomTabsClient;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.customtabs.CustomTabsServiceConnection;
@@ -40,12 +41,12 @@ import nofuemagia.fess.R;
  */
 public class NoticiasFragment extends Fragment {
 
-    CustomTabsClient mCustomTabsClient;
-    CustomTabsSession mCustomTabsSession;
-    CustomTabsIntent mCustomTabsIntent;
-    CustomTabsServiceConnection mCustomTabsServiceConnection;
+    private CustomTabsClient mClient;
+    private CustomTabsIntent.Builder mBuilder;
+
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private RecyclerView rvNoticias;
+
 
     @Nullable
     @Override
@@ -65,37 +66,38 @@ public class NoticiasFragment extends Fragment {
         );
         buscarNoticias();
 
-
-        mCustomTabsServiceConnection = new CustomTabsServiceConnection() {
+        CustomTabsClient.bindCustomTabsService(getContext(), "com.android.chrome", new CustomTabsServiceConnection() {
             @Override
             public void onCustomTabsServiceConnected(ComponentName componentName, CustomTabsClient customTabsClient) {
-                mCustomTabsClient = customTabsClient;
-                mCustomTabsClient.warmup(0L);
-                mCustomTabsSession = mCustomTabsClient.newSession(null);
+                mClient = customTabsClient;
+
+                mBuilder = new CustomTabsIntent.Builder(getSession());
+                mBuilder.setToolbarColor(ContextCompat.getColor(getContext(), R.color.colorPrimary));
+                mBuilder.setSecondaryToolbarColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
+                mBuilder.addDefaultShareMenuItem();
+                mBuilder.setShowTitle(true);
+                mBuilder.setStartAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                mBuilder.setExitAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                mBuilder.enableUrlBarHiding();
             }
 
             @Override
-            public void onServiceDisconnected(ComponentName name) {
-                mCustomTabsClient = null;
+            public void onServiceDisconnected(ComponentName componentName) {
+                mClient = null;
             }
-        };
-
-
-        CustomTabsClient.bindCustomTabsService(getContext(), "com.android.chrome", mCustomTabsServiceConnection);
-
-        CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder(mCustomTabsSession);
-        intentBuilder.setToolbarColor(ContextCompat.getColor(getContext(), R.color.colorPrimary));
-        intentBuilder.setSecondaryToolbarColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
-        intentBuilder.addDefaultShareMenuItem();
-        intentBuilder.setShowTitle(true);
-        intentBuilder.setStartAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        intentBuilder.setExitAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        intentBuilder.enableUrlBarHiding();
-
-        mCustomTabsIntent = intentBuilder.build();
-
+        });
 
         return v;
+    }
+
+
+    private CustomTabsSession getSession() {
+        return mClient.newSession(new CustomTabsCallback() {
+            @Override
+            public void onNavigationEvent(int navigationEvent, Bundle extras) {
+                super.onNavigationEvent(navigationEvent, extras);
+            }
+        });
     }
 
 
@@ -104,14 +106,19 @@ public class NoticiasFragment extends Fragment {
         client.post(ComunicacionClient.NOTICIAS, new JsonHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Aplicacion.mostrarSnack(mySwipeRefreshLayout, getResources().getString(R.string.error_comunicacion), null);
+                Aplicacion.mostrarSnack(mySwipeRefreshLayout, getResources().getString(R.string.error_noticias), null);
+                mySwipeRefreshLayout.setRefreshing(false);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Aplicacion.mostrarSnack(mySwipeRefreshLayout, getResources().getString(R.string.error_noticias), null);
                 mySwipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 mySwipeRefreshLayout.setRefreshing(false);
-                System.out.println(response);
 
                 Type listType = new TypeToken<List<Noticias>>() {
                 }.getType();
@@ -129,7 +136,7 @@ public class NoticiasFragment extends Fragment {
         private final List<Noticias> mDataset;
         private final Context mContext;
 
-        public NoticiasAdapter(List<Noticias> listaNoticias, Context c) {
+        NoticiasAdapter(List<Noticias> listaNoticias, Context c) {
             mDataset = listaNoticias;
             mContext = c;
         }
@@ -155,11 +162,14 @@ public class NoticiasFragment extends Fragment {
                 holder.tvAutor.setVisibility(View.GONE);
             }
 
+            prefetchContent(Uri.parse(noticia.getLink()));
+
             if (noticia.getLink() != null) {
                 holder.tvLink.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mCustomTabsIntent.launchUrl(getContext(), Uri.parse(noticia.getLink()));
+                        CustomTabsIntent mIntent = mBuilder.build();
+                        mIntent.launchUrl(getContext(), Uri.parse(noticia.getLink()));
                     }
                 });
             } else {
@@ -174,7 +184,7 @@ public class NoticiasFragment extends Fragment {
         }
 
 
-        public class NoticiasViewHolder extends RecyclerView.ViewHolder {
+        class NoticiasViewHolder extends RecyclerView.ViewHolder {
 
             private final ImageView ivNoticia;
             private final TextView tvTitulo;
@@ -184,7 +194,7 @@ public class NoticiasFragment extends Fragment {
             private final TextView tvAutor;
             private final TextView tvLink;
 
-            public NoticiasViewHolder(View itemView) {
+            NoticiasViewHolder(View itemView) {
                 super(itemView);
 
                 ivNoticia = (ImageView) itemView.findViewById(R.id.iv_noticia);
@@ -194,6 +204,14 @@ public class NoticiasFragment extends Fragment {
                 tvAutorAutor = (TextView) itemView.findViewById(R.id.tv_autor_autor);
                 tvAutor = (TextView) itemView.findViewById(R.id.tv_autor_noticia);
                 tvLink = (TextView) itemView.findViewById(R.id.tv_link_noticia);
+            }
+        }
+
+        void prefetchContent(Uri url) {
+            if (mClient != null) {
+                mClient.warmup(0);
+                CustomTabsSession customTabsSession = getSession();
+                customTabsSession.mayLaunchUrl(url, null, null);
             }
         }
     }

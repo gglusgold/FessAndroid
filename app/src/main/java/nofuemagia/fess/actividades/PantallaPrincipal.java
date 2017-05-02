@@ -253,6 +253,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 Aplicacion.mostrarSnack(findViewById(R.id.frag_container), getResources().getString(R.string.error_inicio), null);
             }
+
         });
 
     }

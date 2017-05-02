@@ -27,4 +27,5 @@
     <string name="autor">Autor</string>
     <string name="mail_invalido">El mail no es válido</string>
     <string name="deben_coincidir">Las contraseñas tienen que coincidir</string>
+    <string name="error_noticias">No se pudieron traer las noticias</string>
 </resources>
