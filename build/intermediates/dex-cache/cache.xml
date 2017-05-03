@@ -489,21 +489,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_adc4bcd3a473b11c10d32a5795afda86ab53aa3c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="fbaffbfc2a42fce3718dc9f52182810ad332b0ec">
         <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.3.0_0de60b402c818a768b09d3be995e830ef420a64e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Tano\Documents\Personal\Android\FessAndroid\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_adc4bcd3a473b11c10d32a5795afda86ab53aa3c.jar" />
     </item>
     <item
         is-multidex="false"

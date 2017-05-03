@@ -20,7 +20,7 @@ public class ComunicacionClient extends AsyncHttpClient {
     private static final int TIMEOUT = 20 * 10000;
 
     private static final boolean debug = true;
-    private static Servidores actual = Servidores.TRABAJO;
+    private static Servidores actual = Servidores.PRODUCCION;
 
     public static final String URL_IMAGNES = getUrl() + "Imagenes/Producto-";
 
@@ -59,6 +59,8 @@ public class ComunicacionClient extends AsyncHttpClient {
                 return "http://magyp-iis-desa.magyp.ar:5012/";
             else if (actual == Servidores.TRABAJO)
                 return "http://192.168.116.61:56693/";
+            else if (actual == Servidores.PRODUCCION)
+                return "http://economiasocial.somee.com/";
             else
                 return "";
         } else

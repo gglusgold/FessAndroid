@@ -34,4 +34,6 @@
     <string name="mis_compras">Ver compras</string>
     <string name="cancelar_pedido">¡Cancelar pedido!</string>
     <string name="cancelar_confirmacion">¿Está segurx que desea cancelar el pedido?</string>
+    <string name="si_confirmar">Si, borrar!</string>
+    <string name="no">No</string>
 </resources>

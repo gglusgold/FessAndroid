@@ -131,6 +131,10 @@ public class NoticiasFragment extends Fragment {
         });
     }
 
+    public CustomTabsClient getTabsSrv() {
+        return mClient;
+    }
+
     private class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {
 
         private final List<Noticias> mDataset;

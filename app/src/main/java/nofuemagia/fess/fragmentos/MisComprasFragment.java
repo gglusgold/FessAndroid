@@ -135,13 +135,13 @@ public class MisComprasFragment extends Fragment {
                 .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_cancelar_partido, null))
                 .setTitle(R.string.cancelar_pedido)
                 .setMessage(R.string.cancelar_confirmacion)
-                .setPositiveButton(R.string.confirmar, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.si_confirmar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         CancelarRemoto(compra);
                     }
                 })
-                .setNegativeButton(R.string.cancelar, null).create();
+                .setNegativeButton(R.string.no, null).create();
         builder.show();
     }
 

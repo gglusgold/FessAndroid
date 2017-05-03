@@ -7,6 +7,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.loopj.android.http.BlackholeHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.loopj.android.http.SyncHttpClient;
 
 import nofuemagia.fess.Aplicacion;
 import nofuemagia.fess.otros.ComunicacionClient;
@@ -29,7 +30,7 @@ public class NotificacionesIds extends FirebaseInstanceIdService {
         params.put("idVecino", pref.getInt(Aplicacion.IDVECINO, -1));
         params.put("token", token);
 
-        ComunicacionClient client = new ComunicacionClient();
+        SyncHttpClient client = new SyncHttpClient();
         client.post(this, ComunicacionClient.MANDAR_TOKEN, params, new BlackholeHttpResponseHandler());
     }
 }

@@ -3,10 +3,12 @@ package nofuemagia.fess.actividades;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.customtabs.CustomTabsClient;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -60,6 +62,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
     private ComprasFragment comprasFragment;
     private NavigationView navigationView;
     private MenuItem cerrarSesion;
+    private NoticiasFragment noticiasFragment;
 
 
     @Override
@@ -87,11 +90,25 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         cerrarSesion = navigationView.getMenu().findItem(R.id.configuration_section);
         cerrarSesion.setVisible(pref.getBoolean(Aplicacion.LOGUEADO, false));
 
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
             comprasFragment = (ComprasFragment) Fragment.instantiate(this, ComprasFragment.class.getName());
+            noticiasFragment = new NoticiasFragment();
+        }
 
 
         dondeAbrir(getIntent());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (noticiasFragment != null) {
+            CustomTabsClient mServiceConn = noticiasFragment.getTabsSrv();
+            if (mServiceConn != null) {
+                unbindService((ServiceConnection) mServiceConn);
+            }
+        }
     }
 
     @Override
@@ -284,6 +301,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                     AlertDialog builder = new AlertDialog.Builder(PantallaPrincipal.this)
                             .setIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_cart_lleno, null))
                             .setTitle(R.string.gracias)
+                            .setCancelable(false)
                             .setMessage(R.string.confirmado)
                             .setPositiveButton(R.string.mis_compras, new DialogInterface.OnClickListener() {
                                 @Override
@@ -292,7 +310,13 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
                                     invalidateOptionsMenu();
                                 }
                             })
-                            .setNegativeButton(R.string.cerrar, null).create();
+                            .setNegativeButton(R.string.cerrar, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    mostrarComprar(null);
+                                    invalidateOptionsMenu();
+                                }
+                            }).create();
                     builder.show();
 
                 } else
@@ -312,7 +336,7 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         getSupportFragmentManager()
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.frag_container, new NoticiasFragment())
+                .replace(R.id.frag_container, noticiasFragment)
                 .commitNow();
     }
 
