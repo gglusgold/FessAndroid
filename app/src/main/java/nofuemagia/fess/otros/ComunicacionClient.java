@@ -19,7 +19,7 @@ public class ComunicacionClient extends AsyncHttpClient {
 
     private static final int TIMEOUT = 20 * 10000;
 
-    private static final boolean debug = true;
+    private static final boolean debug = false;
     private static Servidores actual = Servidores.PRODUCCION;
 
     public static final String URL_IMAGNES = getUrl() + "Imagenes/Producto-";

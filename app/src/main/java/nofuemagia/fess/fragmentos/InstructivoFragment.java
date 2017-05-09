@@ -70,7 +70,8 @@ public class InstructivoFragment extends Fragment {
                     });
 
 
-                    actualizarFecha(response.optString("Proxima"));
+                    actualizarFecha(response.optBoolean("TandaAbierta"), response.optString("Proxima"));
+
                     mOnInstructivoListener.terminoLocales(yourList);
                 } else
                     Aplicacion.mostrarSnack(tvFecha, error, null);
@@ -83,9 +84,9 @@ public class InstructivoFragment extends Fragment {
         });
     }
 
-    public void actualizarFecha(String fecha) {
+    public void actualizarFecha(boolean tandaAbierta, String fecha) {
         if (tvFecha != null && fecha != null)
-            tvFecha.setText("Tu pedido lo tenés que retirar el sábado " + fecha + " en el horario según el local que elijas");
+            tvFecha.setText(tandaAbierta ? "Tu pedido lo tenés que retirar el sábado " + fecha + " en el horario según el local que elijas" : "No se encuentra ninguna tanda abierta, solo podrá ver los productos");
     }
 
     public interface OnInstructivoListener {

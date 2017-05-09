@@ -43,9 +43,11 @@ public class NoticiasFragment extends Fragment {
 
     private CustomTabsClient mClient;
     private CustomTabsIntent.Builder mBuilder;
+    private CustomTabsServiceConnection serviceConnection;
 
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private RecyclerView rvNoticias;
+
 
 
     @Nullable
@@ -66,7 +68,7 @@ public class NoticiasFragment extends Fragment {
         );
         buscarNoticias();
 
-        CustomTabsClient.bindCustomTabsService(getContext(), "com.android.chrome", new CustomTabsServiceConnection() {
+        serviceConnection = new CustomTabsServiceConnection() {
             @Override
             public void onCustomTabsServiceConnected(ComponentName componentName, CustomTabsClient customTabsClient) {
                 mClient = customTabsClient;
@@ -85,7 +87,9 @@ public class NoticiasFragment extends Fragment {
             public void onServiceDisconnected(ComponentName componentName) {
                 mClient = null;
             }
-        });
+        };
+
+        CustomTabsClient.bindCustomTabsService(getContext(), "com.android.chrome", serviceConnection);
 
         return v;
     }
@@ -131,8 +135,8 @@ public class NoticiasFragment extends Fragment {
         });
     }
 
-    public CustomTabsClient getTabsSrv() {
-        return mClient;
+    public CustomTabsServiceConnection getTabsSrv() {
+        return serviceConnection;
     }
 
     private class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiasViewHolder> {

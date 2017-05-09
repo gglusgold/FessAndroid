@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.customtabs.CustomTabsClient;
+import android.support.customtabs.CustomTabsServiceConnection;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -104,9 +105,9 @@ public class PantallaPrincipal extends AppCompatActivity implements NavigationVi
         super.onDestroy();
 
         if (noticiasFragment != null) {
-            CustomTabsClient mServiceConn = noticiasFragment.getTabsSrv();
+            CustomTabsServiceConnection mServiceConn = noticiasFragment.getTabsSrv();
             if (mServiceConn != null) {
-                unbindService((ServiceConnection) mServiceConn);
+                unbindService(mServiceConn);
             }
         }
     }
