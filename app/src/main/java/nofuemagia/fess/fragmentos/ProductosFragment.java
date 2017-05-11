@@ -1,5 +1,6 @@
 package nofuemagia.fess.fragmentos;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.IntRange;
@@ -34,6 +35,7 @@ import java.util.List;
 import java.util.Locale;
 
 import cz.msebera.android.httpclient.Header;
+import nofuemagia.fess.actividades.DetalleProducto;
 import nofuemagia.fess.otros.ComunicacionClient;
 import nofuemagia.fess.R;
 import nofuemagia.fess.modelo.Categorias;
@@ -222,7 +224,10 @@ public class ProductosFragment extends Fragment {
             holder.ivProducto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sumarPedido(productos, holder);
+                    //sumarPedido(productos, holder);
+                    Intent detalle = new Intent(getContext(), DetalleProducto.class);
+                    detalle.putExtra("id", productos.getIdProducto());
+                    getContext().startActivity(detalle);
                 }
             });
             holder.btnPedir.setOnClickListener(new View.OnClickListener() {

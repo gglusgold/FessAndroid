@@ -8,6 +8,7 @@ import com.loopj.android.http.AsyncHttpClient;
  */
 public class ComunicacionClient extends AsyncHttpClient {
 
+
     public enum Servidores {
         PRODUCCION,
         ECONO,
@@ -19,8 +20,8 @@ public class ComunicacionClient extends AsyncHttpClient {
 
     private static final int TIMEOUT = 20 * 10000;
 
-    private static final boolean debug = false;
-    private static Servidores actual = Servidores.PRODUCCION;
+    private static final boolean debug = true;
+    private static Servidores actual = Servidores.TRABAJO;
 
     public static final String URL_IMAGNES = getUrl() + "Imagenes/Producto-";
 
@@ -38,6 +39,9 @@ public class ComunicacionClient extends AsyncHttpClient {
 
     public static final String MANDAR_TOKEN = getUrl() + "api/apiproductos/ActualizarToken";
     public static final String REGISTRARSE = getUrl() + "api/apiproductos/Registrarse";
+
+    public static final String DETALLE_PRODUCTO = getUrl() + "api/apiproductos/Detalle";
+
 
 
     public ComunicacionClient() {

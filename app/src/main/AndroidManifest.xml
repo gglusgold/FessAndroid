@@ -37,6 +37,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Registrarse" />
 
+        <activity
+            android:name=".actividades.DetalleProducto"
+            android:screenOrientation="portrait" />
+
 
         <service android:name=".notificaciones.NotificacionesIds">
             <intent-filter>
